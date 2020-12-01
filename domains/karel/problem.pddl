@@ -17,6 +17,9 @@
     x8 - coordinate
 		y1 - coordinate		
     y2 - coordinate
+    y3 - coordinate
+    y4 - coordinate
+    y5 - coordinate
 	)
 	(:init
 		(robot-at x1 y1)
@@ -28,11 +31,17 @@
     (succ x6 x7)
     (succ x7 x8) 
     (succ y1 y2)   
+    (succ y2 y3)
+    (succ y3 y4)
+    (succ y4 y5)
     (unmarked x1 y1)
     (unmarked x2 y1)
     (unmarked x3 y1)
     (obstacle x2 y1)
+    (obstacle x2 y2)
+    (obstacle x2 y3)
     (unmarked x5 y1)
+    
     (unmarked x6 y1)
     (unmarked x7 y1)
 
