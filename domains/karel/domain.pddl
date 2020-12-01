@@ -9,16 +9,92 @@
      (robot-at ?x ?y - coordinate)
      (succ ?x ?y - coordinate)
      (marked ?x ?y - coordinate )
+     (unmarked ?x ?y - coordinate)
+     (obstacle ?x ?y - coordinate)
   )
 
   (:functions
      (total-cost) - number
   )
 
-(:action move
-    :parameters (?x1  ?y1 ?x2 ?y2 - coordinate)
-    :precondition (and (robot-at ?x1 ?y1) (succ ?x1 ?x2) (= ?y1 ?y2))               
-    :effect (and (robot-at ?x2 ?y2) (not (robot-at ?x1 ?y1)) (increase (total-cost) 1)))
+
+
+(:action move-east
+  :parameters
+  (?xA ?yA ?xB ?yB - coordinate)
+  :precondition
+  (and
+    (robot-at ?xA ?yA)
+    (succ ?xA ?xB)
+    (= ?yA ?yB)
+    (not (obstacle ?xB ?yB))  
+  )
+  :effect
+  (and
+    (robot-at ?xB ?yB)
+    (not (robot-at ?xA ?yA))
+    (increase (total-cost) 1)
+  )
+)
+
+
+(:action move-west
+  :parameters
+  (?xA ?yA ?xB ?yB - coordinate)
+  :precondition
+  (and
+    (robot-at ?xA ?yA)
+    (succ ?xB ?xA)
+    (= ?yA ?yB)
+    (not (obstacle ?xB ?yB))  
+  )
+  :effect
+  (and
+    (robot-at ?xB ?yB)
+    (not (robot-at ?xA ?yA))
+    (increase (total-cost) 1)
+  )
+)
+
+
+
+(:action move-north
+  :parameters
+  (?xA ?yA ?xB ?yB - coordinate)
+  :precondition
+  (and
+    (robot-at ?xA ?yA)
+    (succ ?yA ?yB)
+    (= ?xA ?xB)
+    (not (obstacle ?xB ?yB))  
+  )
+  :effect
+  (and
+    (robot-at ?xB ?yB)
+    (not (robot-at ?xA ?yA))
+    (increase (total-cost) 1)
+  )
+)
+
+
+
+(:action move-south
+  :parameters
+  (?xA ?yA ?xB ?yB - coordinate)
+  :precondition
+  (and
+    (robot-at ?xA ?yA)
+    (succ ?yB ?yA)
+    (= ?xA ?xB)
+    (not (obstacle ?xB ?yB))  
+  )
+  :effect
+  (and
+    (robot-at ?xB ?yB)
+    (not (robot-at ?xA ?yA))
+    (increase (total-cost) 1)
+  )
+)
 
  (:action mark
     :parameters 
@@ -26,6 +102,7 @@
     :precondition 
       (and
           (robot-at ?x1 ?y1)
+          (unmarked ?x1 ?y1)
       )
     :effect 
       (and
@@ -42,7 +119,7 @@
     )
     :effect
     (and
-        (not (marked ?x1 ?y1))
+        (unmarked ?x1 ?y1)
     )
   )
 )
