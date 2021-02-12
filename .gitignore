@@ -4,6 +4,7 @@
 .sconsign.dblite
 *.pyc
 *~
+*.bin
 
 # FD files
 PLANNERS/fast-downward/src/search/downward-release
@@ -12,6 +13,8 @@ PLANNERS/fast-downward/src/VAL/validate
 PLANNERS/fast-downward/src/validate
 PLANNERS/fast-downward/src/preprocess/preprocess
 PLANNERS/fast-downward/src/VAL/lex.yy.cc
+PLANNERS/fast-downward/builds
+PLANNERS/fast-downward/.hg
 
 # PDDL parser
 universal-pddl-parser/Domain
@@ -23,3 +26,15 @@ bin/compile_variable
 
 execution.txt
 main
+
+
+# temporary files
+act2ins.txt 
+domain.pddl
+ins.pddl
+main_nir
+main_perf
+program.txt
+sas_plan
+*-sas_plan
+*.plan
