@@ -45,5 +45,21 @@
       (increase (total-cost) 1)
     )
 )
- 
+
+
+(:action move-up
+    :parameters (?xA ?yA ?xB ?yB - coordinate)
+    :precondition
+    (and
+      (robot-at ?xA ?yA)
+      (succ ?yA ?yB)
+      (= ?xA ?xB)
+    )
+    :effect 
+    (and 
+      (robot-at ?xB ?yB) 
+      (not (robot-at ?xA ?yA)) 
+      (increase (total-cost) 1)
+    )
+)
 )
