@@ -1,0 +1,12 @@
+PLPR  ### compiler type. PLPR stand for planning programs with procedures
+bin/compile
+domains/test/domainDisjunctionInPrecondition.pddl  ### domain of the problem
+domain.pddl ins.pddl  ### file names for the generated domain and instance file. 
+0   ### number of procedures allowed. Value 0 means there is only one, main, procedure
+4 10 1 domains/test/problem.pddl ### number of lines in the controller allowd --- number of seconds given to the planner --- number of instances to learn the program --- all these instances
+1 10 domains/test/problem.pddl   ### number of instances to test the learnt program --- number of secons given to the planner
+0  ### stack predicates. non-zero only if local variables in procedures are allowed. If non zero, follow this number with list of predicates separated by whitespaces
+0  ### stack objects. it is not completely clear to me what is the difference between stack objects and stack predicates
+1 1 ### stack size: must be greater than 1 if we want to allow recursion --- stack size for validation objects
+0 0 0 ### number of variables that can be used in goto statements --- number of slots in goto statements (don't get this one completely) --- number of classes for unsupervised planning instances
+
