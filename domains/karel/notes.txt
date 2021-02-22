@@ -1,0 +1,6 @@
+Univesal PDDL parser (used by generalized planning framework) does not support conditional effects. 
+This is why I can not use them to determine whether there is an obstacle in front immediately after every action. Instead, I create a separate action, which comes for free, "check for obstacles"
+----> this is a very problematic solution since there is no way to force the agent to check for obstacle after every action (so it can remember that there is an obstacle even after moving away from it).
+-----> try "Axioms", as suggested by max
+
+====> THIS WAS WRONG --> IT SEEMS THAT WHEN HAS BEEN SUPPORTED
