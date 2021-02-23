@@ -3,7 +3,7 @@ bin/compile
 domains/karel/domain-hoc.pddl
 domain.pddl ins.pddl
 0
-5 360 1 domains/karel/problem1-hoc.pddl
+4 360 1 domains/karel/problem1-hoc.pddl
 1 360 domains/karel/problem1-hoc.pddl
 0
 0

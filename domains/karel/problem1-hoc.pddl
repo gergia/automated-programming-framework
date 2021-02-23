@@ -1,6 +1,6 @@
 (define
 	(problem
-		karel-hoc-problem
+		karel-hoc-problem1
 	)
 	(:domain
 		karel-hoc-domain
